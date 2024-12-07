@@ -405,7 +405,7 @@ class Calculator:
             self.formula = "0"
             self.update_display()
             self.update_display(text=self.formula)
-        elif self.formula[0] in ["(", ")"] and self.formula[1] in ["-", "+", "/", "*"]
+        elif self.formula[0] in ["(", ")"] and self.formula[1] in ["-", "+", "/", "*"]:
             self.formula = "0"
             self.update_display()
             self.update_display(text=self.formula)
