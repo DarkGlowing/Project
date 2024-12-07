@@ -391,6 +391,8 @@ class Calculator:
             self.update_display()
             self.result_calculated = True
             self.after_sqrt = False
+            if self.formula[0] in ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"] and self.formula[1] in [.] and self.formula[2] in ["0"]:
+                self.formula = self.formula[0]
         except ValueError:
             self.update_display("Error 106")
         except OverflowError:
