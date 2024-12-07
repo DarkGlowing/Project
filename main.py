@@ -293,7 +293,7 @@ class Calculator:
                 self.formula = self.formula[:18]
                 self.update_display()
                 self.update_display(text=self.formula)
-             elif self.formula[17] in ["+", "-", "/", "*"] and self.formula[18] in ["0"] and self.formula[19] in ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]:
+            elif self.formula[17] in ["+", "-", "/", "*"] and self.formula[18] in ["0"] and self.formula[19] in ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]:
                 self.formula = self.formula[:19]
                 self.update_display()
                 self.update_display(text=self.formula)
