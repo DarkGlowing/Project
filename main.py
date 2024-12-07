@@ -348,9 +348,9 @@ class Calculator:
                             new_number_str = str(-number)
                         
                         if new_number_str == str(int(-number)):
-                            self.formula = self.formula[:0]]
+                            self.formula = self.formula[:0]
                         elif new_number_str == str(float(-number)):
-                            self.formula = self.formula[:0]]
+                            self.formula = self.formula[:0]
 
                         if number > 0:
                             new_expression = self.formula[:match.start(2)] + f"({new_number_str})"
