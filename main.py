@@ -227,7 +227,7 @@ class Calculator:
         self.update_display(text=self.formula)
 
     def zeros_confusion(self):
-        While True:
+        while True:
             if self.formula[1] in ["+", "-", "/", "*"] and self.formula[2] in ["0"] and self.formula[3] in ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]:
                 self.formula = self.formula[:3]
                 self.update_display()
