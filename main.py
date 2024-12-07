@@ -425,7 +425,7 @@ class Calculator:
             elif self.formula[16] in ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"] and self.formula[1] in ["."] and self.formula[2] in ["0"]:
                 self.formula = self.formula[0]
             elif self.formula[17] in ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"] and self.formula[1] in ["."] and self.formula[2] in ["0"]:
-                self.formula = self.formula[0
+                self.formula = self.formula[0]
             self.update_display()
             self.result_calculated = True
             self.after_sqrt = False
