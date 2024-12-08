@@ -350,6 +350,16 @@ class Calculator:
                         else:
                             new_number_str = str(-number)
 
+                        if self.formula[1] in ["-"] or self.formula[2] in ["-"] or self.formula[3] in ["-"]:
+                            new_number_str = str(int(number-(-number)))
+                        elif self.formula[1] in ["-"] or self.formula[2] in ["-"] or self.formula[3] in ["-"]:
+                            new_number_str = str(float(number-(-number)))
+
+                        if new_number_str == str(int(number-(-number))):
+                            new_number_str = str(int(number-number))
+                        elif new_number_str == str(float(number-(-number))):
+                            new_number_str = str(float(number-number))
+
                         if new_number_str == str(int(-number)):
                             self.formula = self.formula[:0]
                         elif new_number_str == str(float(-number)):
