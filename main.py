@@ -63,6 +63,7 @@ class Calculator:
             self.last_operation = None
 
     def append(self, char):
+        values = 0
         if '.' in self.formula:
             decimal_part = self.formula.split('.')[1]
             if decimal_part and decimal_part[-1] == '0' and len(decimal_part) >= 5:
@@ -269,7 +270,6 @@ class Calculator:
         self.consecutive_digits = 0
 
     def change_sign(self):
-        count += 0
         num = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
         try:
             if self.formula:
@@ -279,16 +279,16 @@ class Calculator:
                     in_paren = bool(match.group(2))
                     num_str = match.group(3)
 
-                    if self.formula[0] in ["-"] and count == 1:
+                    if self.formula[0] in ["-"] and values == 1:
                         self.formula = self.formula[1]
-                        count = 0
+                        values = 0
 
                     if num_str.startswith('-'):
                         new_num_str = num_str[1:]
-                        count += 1
+                        values += 1
                     else:
                         new_num_str = '-' + num_str
-                        count += 1
+                        values += 1
 
                     if in_paren:
                         replacement = new_num_str
