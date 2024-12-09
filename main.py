@@ -368,12 +368,14 @@ class Calculator:
 
     def modul(self):
         match = re.search(r"(\d+(\.\d+)?)([+\-*/])?(\d+(\.\d+)?)(?=[^\d\.\-*$]|$)", self.formula)
+        skibka = re.search(r"([+\(*/]))", self.formula)
         if match:
             num1 = match.group(1)
-            char = "+"
+            findchar = match.group(3)
             num2 = match.group(4)
-            self.formula = num1 + char + num2
-            self.update_display(self.formula)
+            skobka = skibka.group(1)
+            char = "+"
+            print(skobka)
 
     def percent(self):
         try:
