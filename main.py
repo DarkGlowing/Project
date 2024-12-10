@@ -370,14 +370,11 @@ class Calculator:
         f = self.formula
         try:
             match = re.search(r"([\-])?(\()?(-?\d+(\.\d+)?)\)?$", self.formula)
-            m = re.search(r"(\d+(\.\d+)?)(?=[^\d\.\-\+*$]|$)", self.formula)
             if match:
-                n = m.group(1)
                 skobka = match.group(2)
                 num = match.group(3)
                 nums = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
                 print(num)
-                print(n)
                 n = m.group(2)
                 if f and not f[-1] in ")":
                     if f[-1] in num and f[-2] in '-':
@@ -397,8 +394,8 @@ class Calculator:
                     if f[-2] in n and f[-3] in '-':
                         f = f[:-1] and f[:-2] and f[:-3]
                     f = f + n + ")"
-                elif f[-1] in ")" and f[-2] in nums and f[-3] in "-" and f[-4] in nums:
-                    if f[-2] in nums and f[-3] in '-':
+                elif f[-1] in ")" and f[-2] in num and f[-3] in "-" and f[-4] in nums:
+                    if f[-2] in num and f[-3] in '-':
                         f = f[:-1] and f[:-2] and f[:-3]
                     f = f + "+" + num + ")"
                 self.consecutive_digits = self.count_digits_before_operator(f)
