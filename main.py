@@ -369,13 +369,13 @@ class Calculator:
     def modul(self):
         f = self.formula
         try:
-            match = re.search(r"(\d+(\.\d+)?)?([\-])?(\()?(-?\d+(\.\d+)?)\)?$", self.formula)
+            match = re.search(r"([\-])?(\()?(-?\d+(\.\d+)?)\)?$", self.formula)
             if match:
-                n = match.group(1)
-                skobka = match.group(3)
-                num = match.group(4)
+                skobka = match.group(2)
+                num = match.group(3)
                 nums = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
                 print(num)
+                
                 if f and not f[-1] in ")":
                     if f[-1] in num and f[-2] in '-':
                         f = f[:-1] and f[:-2]
@@ -391,9 +391,9 @@ class Calculator:
                         f = f[:-1] and f[:-2] and f[:-3] and f[:-4] and f[:-5] and f[:-6] and f[:-7]
                     f = f + "+" + num
                 elif f[-1] in ")" and f[-2] in nums and f[-3] in "-" and not f[-4] in nums:
-                    if f[-2] in n and f[-3] in '-':
+                    if f[-2] in nums and f[-3] in '-':
                         f = f[:-1] and f[:-2] and f[:-3]
-                    f = f + n + ")"
+                    f = f + num + ")"
                 elif f[-1] in ")" and f[-2] in nums and f[-3] in "-" and f[-4] in nums:
                     if f[-2] in nums and f[-3] in '-':
                         f = f[:-1] and f[:-2] and f[:-3]
