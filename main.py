@@ -378,7 +378,7 @@ class Calculator:
                 if f and not f[-1] in ")":
                     if f[-1] in num and f[-2] in '-':
                         f = f[:-1] and f[:-2]
-                    elif f-2] in num and f[-3] in '-':
+                    elif f[-2] in num and f[-3] in '-':
                         f = f[:-1] and f[:-2] and f[:-3]
                     elif f[-3] in num and f[-4] in '-':
                         f = f[:-1] and f[:-2] and f[:-3] and f[:-4]
