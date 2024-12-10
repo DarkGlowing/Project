@@ -401,7 +401,6 @@ class Calculator:
                     if f[-2] in nums and f[-3] in '-':
                         f = f[:-1] and f[:-2] and f[:-3]
                     f = f + "+" + num + ")"
-                self.formula = f
                 self.consecutive_digits = self.count_digits_before_operator(self.formula)
                 self.update_display(self.formula)
         except:
