@@ -367,6 +367,7 @@ class Calculator:
             self.update_display("Error 108")
 
     def modul(self):
+        f = self.formula
         try:
             match = re.search(r"([+\-*/])?(\d+(\.\d+)?)(?=[^\d\.\-*$]|$)", self.formula)
             if match:
@@ -374,32 +375,30 @@ class Calculator:
                 num = match.group(2)
                 nums = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
                 print(num)
-                if self.formula and not self.formula[-1] in ")":
-                    if self.formula[-1] in num and self.formula[-2] in '-':
-                        self.formula = self.formula[:-1] and self.formula[:-2]
-                    elif self.formula[-2] in num and self.formula[-3] in '-':
-                        self.formula = self.formula[:-1] and self.formula[:-2] and self.formula[:-3]
-                    elif self.formula[-3] in num and self.formula[-4] in '-':
-                        self.formula = self.formula[:-1] and self.formula[:-2] and self.formula[:-3] and self.formula[:-4]
-                    elif self.formula[-4] in num and self.formula[-5] in '-':
-                        self.formula = self.formula[:-1] and self.formula[:-2] and self.formula[:-3] and self.formula[:-4] and self.formula[:-5]
-                    elif self.formula[-5] in num and self.formula[-6] in '-':
-                        self.formula = self.formula[:-1] and self.formula[:-2] and self.formula[:-3] and self.formula[:-4] and self.formula[:-5] and self.formula[:-6]
-                    elif self.formula[-6] in num and self.formula[-7] in '-':
-                        self.formula = self.formula[:-1] and self.formula[:-2] and self.formula[:-3] and self.formula[:-4] and self.formula[:-5] and self.formula[:-6] and self.formula[:-7]
-                    self.formula = self.formula + "+" + num
-                elif self.formula[-1] in ")" and self.formula[-2] in num and self.formula[-3] in "-" and not self.formula[-4] in nums:
-                    print("2")
-                    if self.formula[-2] in num and self.formula[-3] in '-':
-                        self.formula = self.formula[:-1] and self.formula[:-2] and self.formula[:-3]
-                    self.formula = self.formula + num + ")"
-                elif self.formula[-1] in ")" and self.formula[-2] in nums and self.formula[-3] in "-" and self.formula[-4] in ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]:
-                    print("3")
-                    if self.formula[-2] in nums and self.formula[-3] in '-':
-                        self.formula = self.formula[:-1] and self.formula[:-2] and self.formula[:-3]
-                    self.formula = self.formula + "+" + num + ")"
-                self.consecutive_digits = self.count_digits_before_operator(self.formula)
-                self.update_display(self.formula)
+                if f and not f[-1] in ")":
+                    if f[-1] in num and f[-2] in '-':
+                        f = f[:-1] and f[:-2]
+                    elif f-2] in num and f[-3] in '-':
+                        f = f[:-1] and f[:-2] and f[:-3]
+                    elif f[-3] in num and f[-4] in '-':
+                        f = f[:-1] and f[:-2] and f[:-3] and f[:-4]
+                    elif f[-4] in num and f[-5] in '-':
+                        f = f[:-1] and f[:-2] and f[:-3] and f[:-4] and f[:-5]
+                    elif f[-5] in num and f[-6] in '-':
+                        f = f[:-1] and f[:-2] and f[:-3] and f[:-4] and f[:-5] and f[:-6]
+                    elif f[-6] in num and f[-7] in '-':
+                        f = f[:-1] and f[:-2] and f[:-3] and f[:-4] and f[:-5] and f[:-6] and f[:-7]
+                    f = f + "+" + num
+                elif f[-1] in ")" and f[-2] in num and f[-3] in "-" and not f[-4] in nums:
+                    if f[-2] in num and f[-3] in '-':
+                        f = f[:-1] and f[:-2] and f[:-3]
+                    f = f + num + ")"
+                elif f[-1] in ")" and f[-2] in nums and f[-3] in "-" and f[-4] in nums:
+                    if f[-2] in nums and f[-3] in '-':
+                        f = f[:-1] and f[:-2] and f[:-3]
+                    f = f + "+" + num + ")"
+                self.consecutive_digits = self.count_digits_before_operator(f)
+                self.update_display(f)
         except:
             self.update_display("Error 110")
 
