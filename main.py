@@ -389,7 +389,7 @@ class Calculator:
                     elif f[-6] in num and f[-7] in '-':
                         f = f[:-1] and f[:-2] and f[:-3] and f[:-4] and f[:-5] and f[:-6] and f[:-7]
                     f = f + "+" + num
-                elif f[-1] in ")" and f[-2] in num and f[-3] in "-" and not f[-4] in nums:
+                elif f[-1] in ")" and f[-2] in num and f[-3] in "-" and not f[-4] in ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]:
                     if f[-2] in num and f[-3] in '-':
                         f = f[:-1] and f[:-2] and f[:-3]
                     f = f + num + ")"
