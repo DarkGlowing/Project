@@ -375,7 +375,7 @@ class Calculator:
                 minus = match.group(1)
                 num = match.group(3)
                 nums = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-                n = match.group(2)
+                n = m.group(2)
                 print(num)
                 print(n)
                 if f and not f[-1] in ")":
