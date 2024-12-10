@@ -377,7 +377,7 @@ class Calculator:
                 print(num)
                 n = m.group(2)
                 if f and not f[-1] in ")":
-                print("1")
+                    print("1")
                     if f[-1] in num and f[-2] in '-':
                         f = f[:-1] and f[:-2]
                     elif f[-2] in num and f[-3] in '-':
@@ -392,12 +392,12 @@ class Calculator:
                         f = f[:-1] and f[:-2] and f[:-3] and f[:-4] and f[:-5] and f[:-6] and f[:-7]
                     f = f + "+" + num
                 elif f[-1] in ")" and f[-2] in num and not f[-4] in num:
-                print("2")
+                    print("2")
                     if f[-2] in num and f[-3] in '-':
                         f = f[:-1] and f[:-2] and f[:-3]
                     f = f + num + ")"
                 elif f[-1] in ")" and f[-2] in num and f[-3] in "-" and f[-4] in num:
-                print("3")
+                    print("3")
                     if f[-2] in num and f[-3] in '-':
                         f = f[:-1] and f[:-2] and f[:-3]
                     f = f + "+" + num + ")"
