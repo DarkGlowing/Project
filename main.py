@@ -370,8 +370,9 @@ class Calculator:
         f = self.formula
         try:
             match = re.search(r"([\-])?(\()?(-?\d+(\.\d+)?)\)?$", self.formula)
-            m = re.search(r"([+\-*/])?(\d+(\.\d+)?)(?=[^\d\.\-\+*$]|$)", self.formula)
+            m = re.search(r"(\d+(\.\d+)?)(?=[^\d\.\-\+*$]|$)", self.formula)
             if match:
+                n = m.group(1)
                 skobka = match.group(2)
                 num = match.group(3)
                 nums = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
