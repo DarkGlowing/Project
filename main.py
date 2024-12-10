@@ -367,6 +367,7 @@ class Calculator:
             self.update_display("Error 108")
 
     def modul(self):
+        f = self.formula
         try:
             match = re.search(r"([\-])?(\()?(-?\d+(\.\d+)?)\)?$", f)
             if match:
