@@ -370,7 +370,7 @@ class Calculator:
         f = self.formula
         try:
             match = re.search(r"([\-])?(\()?(-?\d+(\.\d+)?)\)?$", f)
-            m = re.search(r"(\()?(-?\d+(\.\d+)?)\)?$", f)
+            m = re.search(r"([+\-*/])?(\d+(\.\d+)?)(?=[^\d\.\-*$]|$", f)
             if match:
                 minus = match.group(1)
                 num = match.group(3)
