@@ -369,10 +369,11 @@ class Calculator:
     def modul(self):
         f = self.formula
         try:
-            match = re.search(r"([+\-*/])?(\d+(\.\d+)?)(?=[^\d\.\-*$]|$)", self.formula)
+            match = re.search(r"([\-])?(\()?(-?\d+(\.\d+)?)\)?$", self.formula)
             if match:
                 minus = match.group(1)
-                num = match.group(2)
+                skobka = match.group(2)
+                num = match.group(3)
                 nums = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
                 print(num)
                 if f and not f[-1] in ")":
